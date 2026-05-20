@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Georgia, serif;
+  background-color: #f6e6d6;
+}
+.clinic-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 90px 100px;
+  gap: 60px;
+}
+.clinic-text {
+  max-width: 520px;
+}
+.clinic-text h1 {
+  font-size: 46px;
+  margin-bottom: 25px;
+  color: #111;
+}
+.clinic-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 35px;
+}
+.btn-group {
+  display: flex;
+  gap: 18px;
+}
+
+.btn {
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+}
+.btn.primary {
+  background-color: #ff4b3a;
+  color: black;
+}
+.btn.primary:hover {
+  background-color: #ff3927;
+}
+.btn.outline {
+  background: transparent;
+  border: 2px solid black;
+  color: black;
+}
+.btn.outline:hover {
+  background: black;
+  color: white;
+}
+.clinic-image img {
+  width: 600px;
+  height:400px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .clinic-section {
+    flex-direction: column;
+    padding: 50px 30px;
+  }
+
+  .clinic-image img {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .clinic-text h1 {
+    font-size: 34px;
+  }
+}

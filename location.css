@@ -1,0 +1,260 @@
+/* ======================================
+   LOCATION PAGE STYLES — location.css
+   ====================================== */
+
+/* ── Location Hero ── */
+.location-hero {
+  background: linear-gradient(135deg, var(--color-cream-dark) 0%, var(--color-cream) 100%);
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3xl) var(--space-2xl);
+  gap: var(--space-2xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.location-hero::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 87, 75, 0.05) 0%, transparent 70%);
+  top: -200px;
+  right: -200px;
+  pointer-events: none;
+}
+
+.location-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--space-lg);
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.location-breadcrumb a {
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.location-breadcrumb a:hover {
+  color: var(--color-coral);
+}
+
+.location-breadcrumb .current {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.location-hero-content {
+  max-width: 560px;
+  position: relative;
+  z-index: 1;
+}
+
+.location-hero-content .section-title {
+  margin-bottom: var(--space-lg);
+}
+
+.location-hero-content .section-title em {
+  font-style: italic;
+  color: var(--color-coral);
+  font-family: var(--font-serif);
+}
+
+.location-hero-content .section-subtitle {
+  margin-bottom: var(--space-xl);
+}
+
+.location-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.location-hero-image {
+  position: relative;
+  z-index: 1;
+}
+
+.location-hero-image .image-card {
+  width: 520px;
+  height: 380px;
+  border-radius: var(--radius-xl);
+}
+
+/* ── Clinic Detail Cards ── */
+.clinic-details {
+  background: var(--color-warm-bg);
+}
+
+.clinic-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.clinic-detail-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  border: 1px solid rgba(234, 220, 207, 0.5);
+  transition: all var(--transition-base);
+}
+
+.clinic-detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-coral);
+}
+
+.clinic-detail-icon {
+  font-size: 32px;
+  margin-bottom: var(--space-md);
+}
+
+.clinic-detail-card h3 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
+}
+
+.clinic-address {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.clinic-hours,
+.clinic-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+/* ── Location Services List ── */
+.location-services {
+  background: var(--color-cream);
+}
+
+.services-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.service-list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  border: 1px solid rgba(234, 220, 207, 0.5);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.service-list-item:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-coral);
+}
+
+.service-list-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.service-list-item h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.service-list-item p {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.service-list-arrow {
+  font-size: 20px;
+  color: var(--color-coral);
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.service-list-item:hover .service-list-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .location-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-xl) var(--space-lg);
+    min-height: auto;
+  }
+
+  .location-breadcrumb {
+    justify-content: center;
+  }
+
+  .location-hero-actions {
+    justify-content: center;
+  }
+
+  .location-hero-image .image-card {
+    width: 100%;
+    max-width: 480px;
+    height: 300px;
+  }
+
+  .location-hero-content .section-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .clinic-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .services-list-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .location-hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}

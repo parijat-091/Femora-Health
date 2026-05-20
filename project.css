@@ -1,0 +1,505 @@
+/* ======================================
+   HOMEPAGE STYLES — project.css
+   ====================================== */
+
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(135deg, var(--color-cream-dark) 0%, var(--color-cream) 100%);
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3xl) var(--space-2xl);
+  gap: var(--space-2xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(232, 87, 75, 0.06) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 47, 146, 0.04) 0%, transparent 70%);
+  bottom: -100px;
+  left: -100px;
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 560px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xl);
+  letter-spacing: -0.5px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--color-coral);
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image .image-card {
+  width: 520px;
+  height: 420px;
+  border-radius: var(--radius-xl);
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: -20px;
+  left: -30px;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-lg);
+  animation: float 4s ease-in-out infinite;
+}
+
+.badge-icon {
+  font-size: 28px;
+}
+
+.badge-text {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.badge-text strong {
+  color: var(--color-coral);
+  font-weight: 700;
+}
+
+/* ── Mission Section ── */
+.mission-section {
+  background: var(--color-warm-bg);
+}
+
+.mission-card {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--color-sand);
+  padding: var(--space-3xl) var(--space-3xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  overflow: hidden;
+}
+
+.mission-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 40%, rgba(232, 87, 75, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.mission-text {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.7;
+  color: var(--color-text-primary);
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.mission-text::before {
+  content: '"';
+  font-family: var(--font-serif);
+  font-size: 80px;
+  color: var(--color-coral);
+  opacity: 0.2;
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  line-height: 1;
+}
+
+/* ── How It Works ── */
+.how-section {
+  background: var(--color-cream);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.step-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  transition: all var(--transition-base);
+  border: 1px solid rgba(234, 220, 207, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-coral), var(--color-pink-accent));
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+}
+
+.step-card:hover::before {
+  transform: scaleX(1);
+}
+
+.step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 700;
+  color: rgba(232, 87, 75, 0.1);
+  margin-bottom: var(--space-sm);
+}
+
+.step-icon {
+  font-size: 36px;
+  margin-bottom: var(--space-md);
+}
+
+.step-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
+}
+
+.step-card p {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Services ── */
+.services-section {
+  background: var(--color-warm-bg);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+.service-card {
+  display: block;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  border: 1px solid rgba(234, 220, 207, 0.5);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.service-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.service-card:hover .service-card-image img {
+  transform: scale(1.05);
+}
+
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.15));
+}
+
+.service-card-body {
+  padding: var(--space-lg);
+}
+
+.service-card-body h3 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
+}
+
+.service-card-body p {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.service-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-coral);
+  transition: gap var(--transition-fast);
+}
+
+.service-card:hover .service-link {
+  letter-spacing: 0.5px;
+}
+
+/* ── What's New ── */
+.whats-new-section {
+  background: var(--color-cream);
+}
+
+.featured-card {
+  background: linear-gradient(135deg, var(--color-rose) 0%, var(--color-rose-dark) 100%);
+  border-radius: var(--radius-lg);
+  display: flex;
+  overflow: hidden;
+  max-width: 1100px;
+  margin: var(--space-xl) auto 0;
+  box-shadow: 0 20px 60px rgba(140, 29, 77, 0.2);
+}
+
+.featured-card-content {
+  flex: 1;
+  padding: var(--space-2xl);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-lg);
+  width: fit-content;
+  backdrop-filter: blur(4px);
+}
+
+.featured-card-content h3 {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  line-height: 1.3;
+}
+
+.featured-card-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-xl);
+}
+
+.featured-card-image {
+  width: 440px;
+  min-height: 400px;
+  flex-shrink: 0;
+  padding: var(--space-xl);
+}
+
+.featured-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* ── Locations ── */
+.locations-section {
+  background: var(--color-warm-bg);
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.location-card {
+  display: block;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+  transition: all var(--transition-base);
+  border: 1px solid rgba(234, 220, 207, 0.5);
+}
+
+.location-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-coral);
+}
+
+.location-icon {
+  font-size: 36px;
+  margin-bottom: var(--space-md);
+}
+
+.location-card h3 {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
+}
+
+.location-card p {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.location-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-coral);
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-xl) var(--space-lg);
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-image .image-card {
+    width: 100%;
+    max-width: 480px;
+    height: 340px;
+  }
+
+  .hero-badge {
+    bottom: -10px;
+    left: 10px;
+  }
+
+  .star-list {
+    text-align: left;
+    display: inline-block;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .featured-card {
+    flex-direction: column;
+  }
+
+  .featured-card-image {
+    width: 100%;
+    min-height: 260px;
+    padding: var(--space-lg);
+  }
+
+  .locations-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-image .image-card {
+    height: 280px;
+  }
+
+  .mission-card {
+    padding: var(--space-xl);
+  }
+
+  .mission-text {
+    font-size: 18px;
+  }
+
+  .featured-card-content h3 {
+    font-size: 24px;
+  }
+}
